@@ -1,0 +1,14 @@
+CREATE TABLE public."user"
+(
+    "user_ID" integer NOT NULL DEFAULT nextval('"user_user_ID_seq"'::regclass),
+    username character varying(16) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "user_ID_PK" PRIMARY KEY ("user_ID")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."user"
+    OWNER to postgres;

@@ -1,0 +1,17 @@
+CREATE TABLE public."userAdm"
+(
+    "isAdmin" boolean NOT NULL,
+    "admin_ID" integer NOT NULL DEFAULT nextval('"userAdm_admin_ID_seq"'::regclass),
+    CONSTRAINT "admin_ID_PK" PRIMARY KEY ("admin_ID"),
+    CONSTRAINT "admin_ID_FK" FOREIGN KEY ("admin_ID")
+        REFERENCES public."user" ("user_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."userAdm"
+    OWNER to postgres;

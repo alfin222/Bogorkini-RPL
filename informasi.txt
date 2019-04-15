@@ -1,0 +1,22 @@
+CREATE TABLE public.informasi
+(
+    nama character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    alamat character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    "fotoFilePath" character varying(64) COLLATE pg_catalog."default" NOT NULL,
+    "info_ID" integer NOT NULL DEFAULT nextval('"informasi_info_ID_seq"'::regclass),
+    deskripsi character varying COLLATE pg_catalog."default" NOT NULL,
+    author integer NOT NULL DEFAULT nextval('informasi_author_seq'::regclass),
+    rating integer NOT NULL,
+    CONSTRAINT "info_ID_PK" PRIMARY KEY ("info_ID"),
+    CONSTRAINT "author_ID_FK" FOREIGN KEY (author)
+        REFERENCES public."userAdm" ("admin_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.informasi
+    OWNER to postgres;

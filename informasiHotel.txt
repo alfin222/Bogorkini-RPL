@@ -1,0 +1,17 @@
+CREATE TABLE public."informasiHotel"
+(
+    bintang integer NOT NULL,
+    "hotel_ID" integer NOT NULL DEFAULT nextval('"informasiHotel_hotel_ID_seq"'::regclass),
+    CONSTRAINT "hotel_ID_PK" PRIMARY KEY ("hotel_ID"),
+    CONSTRAINT "hotel_ID_FK" FOREIGN KEY ("hotel_ID")
+        REFERENCES public.informasi ("info_ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."informasiHotel"
+    OWNER to postgres;
