@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      NEWS
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card *ngFor="let data of news; let i = index"  (click)="goViewNews(data)">
+  <img src="{{data.url_gambar}}"/>
+  <ion-card-content>
+    <ion-card-title>
+      {{data.judul}}
+      </ion-card-title>
+    <ion-row>
+      <ion-col center text-center>
+        <ion-note>
+          {{data.date}}
+          <p>{{data.penulis}}</p>
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+</ion-content>

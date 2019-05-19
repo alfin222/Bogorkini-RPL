@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      FOOD
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="card-background-page" >
+    <ion-card *ngFor="let data of food" (click)="goViewFood(data)">
+      <img src="{{data.gambar}}">
+      <ion-item>
+        <ion-icon name="food" item-start large ></ion-icon>
+        <h2>{{data.name}}</h2>
+        <p>{{data.type}}</p>
+        <p>{{data.cuisine}}</p>
+      </ion-item>
+    </ion-card>
+</ion-content>

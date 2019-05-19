@@ -1,0 +1,31 @@
+<ion-header>
+  
+  <ion-navbar color="primary" text-center>
+    <ion-title>Bogor Kini</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="icon">
+  <ion-thumbnail item-center>
+    <img src="www/assets/imgs/bogorkini.png">
+  </ion-thumbnail>
+  
+  <ion-list>
+    
+    <ion-item>
+      <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    
+    <ion-item>     
+      <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+  <button ion-button full (click)="login()">Log In</button>
+  <br/>
+  <hr>
+  <br/>
+  <button ion-button full color="light" (click)="goRegister()">Sign Up</button>
+
+</ion-content>
